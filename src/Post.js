@@ -10,6 +10,10 @@ class Post extends Component{
 		const { post } = this.props;
 		return(
 			<li className="Post" id={post.id_post}>
+				<div>
+					<img src="vote_up.png" height="20px" widht="20px"/>
+					<img src="vote_down.png" height="20px" widht="20px"/>
+				</div>
                 <div className="Post-core">
                   <p className="Post-body">
                     {post.body}
