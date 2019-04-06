@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import fire from './fire';
 import './App.css';
 
+import Post from './Post';
+import Observer from './Observer';
+
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = { posts: [] };
+  }
+
+  componentDidMount(){
+    let postsRef = fire.database().ref('posts').orderByKey().limitToLast(100);
+    postsRef.on('child_added', snapshot => {
+      let post = snapshot.val();
+      this.setState({ posts: [post].concat(this.state.posts) });
+    })
+  }
+
   render() {
+    console.log(this.state.posts);
+    const { posts } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Observer/>
+        <div className="Posts">
+          <ul>
+            {posts.map((post) => 
+              <Post post={post}/>
+            )}
+          </ul>
+        </div>
       </div>
     );
   }
