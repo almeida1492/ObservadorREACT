@@ -3,7 +3,7 @@ import './App.css';
 
 const Observer = props => {
 	return(
-		<header className="Picture-container">
+		<header className="Observer">
           <p>
             Observador
           </p>

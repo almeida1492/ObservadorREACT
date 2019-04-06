@@ -26,13 +26,13 @@ class App extends Component {
     return (
       <div className="App">
         <Observer/>
-        <div className="Posts">
-          <ul>
-            {posts.map((post) => 
-              <Post post={post}/>
-            )}
-          </ul>
-        </div>
+        <nav className="Posts">
+            <ul>
+              {posts.map((post) => 
+                <Post post={post}/>
+              )}
+            </ul>
+        </nav>
       </div>
     );
   }
