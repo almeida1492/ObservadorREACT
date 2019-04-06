@@ -10,9 +10,9 @@ class Post extends Component{
 		const { post } = this.props;
 		return(
 			<li className="Post" id={post.id_post}>
-				<div>
-					<img src="vote_up.png" height="20px" widht="20px"/>
-					<img src="vote_down.png" height="20px" widht="20px"/>
+				<div className="Vote-buttons-set">
+					<img src="vote_up.png" className="Vote-button"/>
+					<img src="vote_down.png" className="Vote-button"/>
 				</div>
                 <div className="Post-core">
                   <p className="Post-body">

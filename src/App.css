@@ -20,11 +20,11 @@
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 700px;
   font-size: 12px;
   max-height: 100vh;
   padding-right: 40px;
-  padding-left: 40px;
+  padding-left: 5px;
 }
 
 .Post{
@@ -33,14 +33,25 @@
   text-align: left;
   align-items: flex-start;
   border-bottom: 1px solid #E0E0E0;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .Vote-buttons-set{
+  display: flex;
+  margin-top: 6px;
   flex-direction: column;
+}
+
+.Vote-button{
+  width: 25px;
+  height: 23px;
+  margin-top: 5px;
 }
 
 .Post-core{
   flex-direction: column;
+  margin-left: 21px;
 }
 
 .Post-body{
