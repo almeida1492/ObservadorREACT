@@ -6,8 +6,20 @@ class Post extends Component{
 		super(props);
 	}
 
+	getBackgroundColor = (post) => {
+		if (post.votes < 0) {
+			return '#E94F37';
+		}
+		else if (post.votes < 10) {
+			return '#3F88C5';
+		} else {
+			return '#55C1AC';
+		}
+	}
+
 	render() {
 		const { post } = this.props;
+		const color = this.getBackgroundColor(post);
 		return(
 			<li className="Post" id={post.id_post}>
 				<div className="Vote-buttons-set">
@@ -24,7 +36,7 @@ class Post extends Component{
                     </p>
                   </div>
                 </div>
-                <p className="Vote-counter">
+                <p className="Vote-counter" style={{backgroundColor: color}}>
                   {post.votes}
                 </p>
             </li>
