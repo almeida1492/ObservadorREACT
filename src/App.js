@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
     const { posts } = this.state;
     return (
       <div className="App">
